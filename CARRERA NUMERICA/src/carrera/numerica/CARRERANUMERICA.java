@@ -234,10 +234,10 @@ public class CARRERANUMERICA {
                             
                             if (vectores[i]>30 ){
                             vectores[i]=vectores[i]-dado1;
-                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 20 ¡¡¡¡");
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 30 ¡¡¡¡");
                             }//cierre de pasarse 
                             if (vectores[i]==30){
-                            ganador=20;
+                            ganador=30;
                             gana=i;
                             i=numj+1;
                             }//NOMBRE DEL GANADOR
@@ -341,7 +341,7 @@ public class CARRERANUMERICA {
                             
                             if (vectores[i]>50 ){
                             vectores[i]=vectores[i]-dado1;
-                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 20 ¡¡¡¡");
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 50 ¡¡¡¡");
                             }//cierre de pasarse 
                             if (vectores[i]==50){
                             ganador=50;
