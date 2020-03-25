@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejerciocio2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Aula1
+ */
+public class EJERCIOCIO2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner Datos;
+        Datos = new Scanner (System.in);
+        int a,b,suma,resta,mult,divicion,opc ;
+        System.out.println("digete el primer nuumero: ");
+        a=Datos.nextInt();
+        System.out.println("digete el primer nuumero: ");
+        b=Datos.nextInt();
+        System.out.println("-------------------------------");
+        System.out.println("-----¿QUE OPERACION DESEA REALIZAR-----");
+        System.out.println("´1´.SUMA");
+        System.out.println("´2´.RESTA");
+        System.out.println("´3´.MULTIPLICACION");
+        System.out.println("´4´.DIVICION");
+        opc=Datos.nextInt();
+        if (opc==1){
+        suma =a+b;
+        System.out.println(":la SUMA es : "+suma);
+        System.out.println("-------------------------------");
+        }
+        if (opc==2){
+        resta =a-b;
+        System.out.println(":la RESTA es : "+resta);
+        System.out.println("-------------------------------");
+        }
+        if (opc==3){
+        mult =a*b;
+        System.out.println(":la MULTIPLICACION es : "+mult);
+        System.out.println("-------------------------------");
+        }
+        if (opc==4){
+        divicion =a/b;
+        System.out.println(":la DIVICION es : "+divicion);
+        System.out.println("-------------------------------");
+        }
+        
+    }
+    
+    
+}

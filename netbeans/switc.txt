@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaaa;
+
+/**
+ *
+ * @author Estudiantes
+ */
+public class Aaaa {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int n1=5,n2=6,op=3,res=0,suma,resta,mult,divicion;
+        //operciones numericas
+        switch (op) {
+            case 1:
+                res=n1+n2;
+                break;
+            case 2:
+                res=n1-n2;
+                break;
+            case 3:
+                res=n1*n2;
+                break;
+            case 4:
+                res =n1/n2;
+                break;
+            default:
+                break;
+        }
+        System.out.println("la respuesat es : "+res  );
+    }
+    
+}

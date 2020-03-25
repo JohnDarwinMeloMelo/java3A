@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication7;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Estudiantes
+ */
+public class JavaApplication7 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner Datos;
+        Datos = new Scanner (System.in);
+        int tabla=0,n1=0,n2=0,i=0,a=0,res=0;
+        System.out.println("digite la tabla de multiplicar");
+        tabla=Datos.nextInt();
+        System.out.println("digite inicio de tabla");
+        n1=Datos.nextInt();
+        System.out.println("digite fin de la tabla");
+        n2=Datos.nextInt();
+        if (n1>n2){
+        while (n1>n2){
+        System.out.println("_________----------------________");
+        System.out.println("ERROR EL NUMERO DE INICIO NO PUEDE SER MAYOR QUE EL FINAL DE TABLA");
+        System.out.println("digite inicio de tabla");
+        n1=Datos.nextInt();
+        System.out.println("digite fin de la tabla");
+        n2=Datos.nextInt();
+        
+        }//cierre de while 
+        
+        }//cieere de if 
+        System.out.println("_____________________________________________________________________");
+        System.out.println("_____________________________________________________________________");
+        System.out.println("_____________________________________________________________________");
+        while (i<=n2){
+            
+            i=n1;
+            res=n1*tabla;
+            System.out.println(n1++ +"x"+tabla+"="+res  );
+            
+            a++;
+            i++;
+        }
+    }
+    
+}
