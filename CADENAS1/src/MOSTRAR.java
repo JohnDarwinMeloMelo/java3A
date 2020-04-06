@@ -14,6 +14,7 @@ public class MOSTRAR extends javax.swing.JFrame {
      * Creates new form MOSTRAR
      */
     String n;
+    char letra;
     public MOSTRAR() {
         initComponents();
         
@@ -51,8 +52,8 @@ public class MOSTRAR extends javax.swing.JFrame {
         numeroletra = new javax.swing.JTextField();
         btnbuscar = new javax.swing.JButton();
         mostrarletra = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnmayuscula = new javax.swing.JButton();
+        btnminuscula = new javax.swing.JButton();
         tipo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -227,13 +228,25 @@ public class MOSTRAR extends javax.swing.JFrame {
         mostrarletra.setFont(new java.awt.Font("Bauhaus 93", 0, 48)); // NOI18N
         mostrarletra.setText("?");
 
-        jButton2.setBackground(new java.awt.Color(0, 255, 51));
-        jButton2.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
-        jButton2.setText("MAY");
+        btnmayuscula.setBackground(new java.awt.Color(0, 255, 51));
+        btnmayuscula.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        btnmayuscula.setText("MAY");
+        btnmayuscula.setEnabled(false);
+        btnmayuscula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmayusculaActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(51, 255, 51));
-        jButton3.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
-        jButton3.setText("MIN");
+        btnminuscula.setBackground(new java.awt.Color(51, 255, 51));
+        btnminuscula.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        btnminuscula.setText("MIN");
+        btnminuscula.setEnabled(false);
+        btnminuscula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnminusculaActionPerformed(evt);
+            }
+        });
 
         tipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tipo.setText("TYPE A NUMBER");
@@ -253,8 +266,8 @@ public class MOSTRAR extends javax.swing.JFrame {
                 .addComponent(mostrarletra, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94)
                 .addGroup(tbuscadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnminuscula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnmayuscula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(46, 46, 46))
         );
         tbuscadorLayout.setVerticalGroup(
@@ -265,9 +278,9 @@ public class MOSTRAR extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(tbuscadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tbuscadorLayout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnmayuscula, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnminuscula, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(tbuscadorLayout.createSequentialGroup()
                                 .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -387,6 +400,7 @@ public class MOSTRAR extends javax.swing.JFrame {
 
     private void mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarActionPerformed
         // TODO add your handling code here:
+        String pinicial;
         n=ingreso.getText();
         System.out.println("El nombre es :"+n);
          
@@ -394,8 +408,13 @@ public class MOSTRAR extends javax.swing.JFrame {
         mmayuscula.setText(n.toUpperCase());
         mminusculas.setText(n.toLowerCase());
         nletras.setText(""+n.length());
+        pinicial=n;
+        char primeraLetra=pinicial.charAt(0);
+        String sobra = pinicial.substring(1, pinicial.length());
+        pinicial= Character.toUpperCase(primeraLetra) + sobra.toLowerCase();
+        //inicial.setText(pinicial);
+        inicial.setText(pinicial);
         
-
     }//GEN-LAST:event_mostrarActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
@@ -458,9 +477,37 @@ public class MOSTRAR extends javax.swing.JFrame {
         int nbl;
         nbl = Integer.parseInt(numeroletra.getText());
          //num1= Integer.parseInt(n1.getText());
-        char letra= n.charAt(nbl-1);
+        letra= n.charAt(nbl-1);
         mostrarletra.setText(""+letra);
+        if (Character.isLowerCase(letra)){
+            btnmayuscula.setEnabled(true);
+            btnminuscula.setEnabled(false);
+        }else if (Character.isUpperCase(letra)){
+            btnmayuscula.setEnabled(false);
+            btnminuscula.setEnabled(true);
+        }else {
+        
+            btnmayuscula.setEnabled(false);
+            btnminuscula.setEnabled(false);
+        }
     }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void btnminusculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnminusculaActionPerformed
+        // TODO add your handling code here:
+        
+        mostrarletra.setText(""+Character.toLowerCase(letra));
+        btnmayuscula.setEnabled(true);
+        btnminuscula.setEnabled(false);
+        
+    }//GEN-LAST:event_btnminusculaActionPerformed
+
+    private void btnmayusculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmayusculaActionPerformed
+        // TODO add your handling code here:
+        mostrarletra.setText(""+Character.toUpperCase(letra));
+        btnmayuscula.setEnabled(false);
+        btnminuscula.setEnabled(true);
+        
+    }//GEN-LAST:event_btnmayusculaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -502,6 +549,8 @@ public class MOSTRAR extends javax.swing.JFrame {
     private javax.swing.JLabel b;
     private javax.swing.JButton borrar;
     private javax.swing.JButton btnbuscar;
+    private javax.swing.JButton btnmayuscula;
+    private javax.swing.JButton btnminuscula;
     private javax.swing.JLabel c;
     private javax.swing.JLabel d;
     private javax.swing.JLabel e;
@@ -510,8 +559,6 @@ public class MOSTRAR extends javax.swing.JFrame {
     private javax.swing.JButton ingles;
     private javax.swing.JTextField ingreso;
     private javax.swing.JLabel inicial;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel mmayuscula;

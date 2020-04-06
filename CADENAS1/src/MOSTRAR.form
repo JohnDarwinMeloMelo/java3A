@@ -441,8 +441,8 @@
                       <Component id="mostrarletra" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton3" max="32767" attributes="0"/>
-                          <Component id="jButton2" max="32767" attributes="0"/>
+                          <Component id="btnminuscula" max="32767" attributes="0"/>
+                          <Component id="btnmayuscula" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
@@ -456,9 +456,9 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jButton2" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="btnmayuscula" min="-2" pref="36" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButton3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="btnminuscula" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="tipo" min="-2" pref="21" max="-2" attributes="0"/>
@@ -501,7 +501,7 @@
                 <Property name="text" type="java.lang.String" value="?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="btnmayuscula">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -510,9 +510,13 @@
                   <Font name="Bauhaus 93" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="MAY"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmayusculaActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnminuscula">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="ff" red="33" type="rgb"/>
@@ -521,7 +525,11 @@
                   <Font name="Bauhaus 93" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="MIN"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnminusculaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="tipo">
               <Properties>
