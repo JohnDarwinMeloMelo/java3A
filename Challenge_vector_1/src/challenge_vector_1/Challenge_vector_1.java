@@ -42,6 +42,7 @@ public class Challenge_vector_1 {
             if (res==numeros[i] ){
                 while (res==numeros[i]){
                     System.out.println("------------ERROR---------");
+                    System.out.println("-----el numero que entrodujo el la suma del ulmimo con el antepenultimo---");
                     System.out.println("DIGITE OTRA VEZ EL NUMERO:");
                     numeros[i] = reader.nextInt();
                 }
