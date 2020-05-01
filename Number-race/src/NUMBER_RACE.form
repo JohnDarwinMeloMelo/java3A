@@ -57,9 +57,9 @@
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="nconfiguracion" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="ninformacion" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="nreiniciar" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="bconfiguracion" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="binformacion" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="breiniciar" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -95,11 +95,11 @@
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="nconfiguracion" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="bconfiguracion" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="nreiniciar" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="breiniciar" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ninformacion" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="binformacion" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -169,6 +169,7 @@
                   <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PLAY-PLAYER: #"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bplayActionPerformed"/>
@@ -595,7 +596,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="nconfiguracion">
+        <Component class="javax.swing.JButton" name="bconfiguracion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="ff" type="rgb"/>
@@ -604,12 +605,13 @@
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CONFIG PARAMS"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nconfiguracionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bconfiguracionActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="ninformacion">
+        <Component class="javax.swing.JButton" name="binformacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="ff" type="rgb"/>
@@ -618,12 +620,13 @@
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ABOUT OF"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ninformacionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="binformacionActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="nreiniciar">
+        <Component class="javax.swing.JButton" name="breiniciar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="ff" type="rgb"/>
@@ -632,9 +635,10 @@
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="TRY AGAIN"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nreiniciarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="breiniciarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

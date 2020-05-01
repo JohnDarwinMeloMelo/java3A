@@ -1,3 +1,7 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,10 +17,34 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     /**
      * Creates new form NUMBER_RACE
      */
+    
+    
+     Random aleatorio = new Random();
+     Scanner Datos;
+     
+     int vector=0;
+     int vectores[]= new int[10];
+     int contPar[]= new int[10]; 
+     int b=0,a=1,numj=0,opc=1,ganador=0,i=1,res1,gana=0;
+     String opc1="";
+     
+     
+     
+     
+     
+     
     public NUMBER_RACE() {
         initComponents();
+        Datos = new Scanner(System.in);
+        
+        
+        
     }
 
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,9 +77,9 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         nganador = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         npares = new javax.swing.JLabel();
-        nconfiguracion = new javax.swing.JButton();
-        ninformacion = new javax.swing.JButton();
-        nreiniciar = new javax.swing.JButton();
+        bconfiguracion = new javax.swing.JButton();
+        binformacion = new javax.swing.JButton();
+        breiniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NUMBER RACE");
@@ -67,6 +95,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         bplay.setBackground(new java.awt.Color(255, 102, 0));
         bplay.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         bplay.setText("PLAY-PLAYER: #");
+        bplay.setEnabled(false);
         bplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bplayActionPerformed(evt);
@@ -296,30 +325,33 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        nconfiguracion.setBackground(new java.awt.Color(255, 102, 0));
-        nconfiguracion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        nconfiguracion.setText("CONFIG PARAMS");
-        nconfiguracion.addActionListener(new java.awt.event.ActionListener() {
+        bconfiguracion.setBackground(new java.awt.Color(255, 102, 0));
+        bconfiguracion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bconfiguracion.setText("CONFIG PARAMS");
+        bconfiguracion.setEnabled(false);
+        bconfiguracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nconfiguracionActionPerformed(evt);
+                bconfiguracionActionPerformed(evt);
             }
         });
 
-        ninformacion.setBackground(new java.awt.Color(255, 102, 0));
-        ninformacion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        ninformacion.setText("ABOUT OF");
-        ninformacion.addActionListener(new java.awt.event.ActionListener() {
+        binformacion.setBackground(new java.awt.Color(255, 102, 0));
+        binformacion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        binformacion.setText("ABOUT OF");
+        binformacion.setEnabled(false);
+        binformacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ninformacionActionPerformed(evt);
+                binformacionActionPerformed(evt);
             }
         });
 
-        nreiniciar.setBackground(new java.awt.Color(255, 102, 0));
-        nreiniciar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        nreiniciar.setText("TRY AGAIN");
-        nreiniciar.addActionListener(new java.awt.event.ActionListener() {
+        breiniciar.setBackground(new java.awt.Color(255, 102, 0));
+        breiniciar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        breiniciar.setText("TRY AGAIN");
+        breiniciar.setEnabled(false);
+        breiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nreiniciarActionPerformed(evt);
+                breiniciarActionPerformed(evt);
             }
         });
 
@@ -336,9 +368,9 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nconfiguracion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ninformacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nreiniciar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(bconfiguracion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(binformacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(breiniciar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -365,11 +397,11 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(nconfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bconfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nreiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(breiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(ninformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(binformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -397,30 +429,176 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void cjugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cjugadoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cjugadoresActionPerformed
 
     private void bjugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bjugarActionPerformed
         // TODO add your handling code here:
+        
+        numj = Integer.parseInt(cjugadores.getSelectedItem().toString()) ;
+        opc1 =  cnivel.getSelectedItem().toString() ;
+        if(opc1 == "BASIC") {opc=1; }
+        if(opc1 == "INTERMEDIATE") {opc=2; }
+        if(opc1 == "ADVANCED") {opc=3; }
+        bjugar.setEnabled(false);
+        bplay.setEnabled(true);
+        bconfiguracion.setEnabled(true);
+        breiniciar.setEnabled(true);
+        binformacion.setEnabled(true);
+        System.out.println(numj+"-----"+opc );
+        bplay.setText("PLAY-PLAYER: 1");
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_bjugarActionPerformed
 
+    
+    public void listo(){
+    
+    
+    
+    
+    }
+    
+    
+    
+    
     private void bplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bplayActionPerformed
         // TODO add your handling code here:
+        
+    switch (opc){
+        case 1:
+            if (ganador<20){
+                b=0;
+                a=1;
+                System.out.println("------------------------------");    
+                System.out.println("------------------------------");
+                System.out.println("\n\n\n\n\n");
+                System.out.println("LA META ES => 20");
+  
+                    
+                    
+                     
+                    
+                   
+                   
+                        
+                         if (vectores[i]+6<20){
+                            System.out.println("------------------------------");    
+                            System.out.println("------------------------------");
+                            System.out.println("----JUGADOR NUMERO "+i);
+                            nturno.setText(String.valueOf(i));
+                            System.out.println("presione enter para lanzar (2) los dados");
+ 
+                            
+                            int dado1 = 1 + aleatorio.nextInt(6);
+                            int dado2 = 1 + aleatorio.nextInt(6);
+                            System.out.println("-DADO 1:  "+dado1);
+                            System.out.println("-DADO 2:  "+dado2);
+
+
+
+
+                            if (dado1==dado2){
+                                contPar[i]++;
+                                npares.setText(String.valueOf(contPar[i]));
+                            }else{
+                                contPar[i]=0;
+                                
+                            } //cieree de if dado igual
+                            if (contPar[i]==3){
+                                System.out.println("¡¡¡RACHA 3 PARES SEGUIDOS GANAS EN JUEGO");
+                                vectores[i]=20;
+                                ganador=20;
+                            }//cierre de contador ganador 
+                            
+                            
+                            if (contPar[i]<3){
+                            vector=dado1+dado2;
+                            vectores[i]=vector+vectores[i];
+                            }//cierre de conador pasa
+                              
+
+
+                            if (vectores[i]>20 ){
+                            vectores[i]=vectores[i]-vector;
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 20 ¡¡¡¡");
+                            }//cierre de pasarse 
+                            if (vectores[i]==20){
+                            ganador=20;
+                            gana=i;
+                            i=numj+1;
+                            }//NOMBRE DEL GANADOR 
+                        }else{
+                            System.out.println("------------------------------");    
+                            System.out.println("------------------------------");
+                            System.out.println("----JUGADOR NUMERO "+i);
+                            System.out.println("presione enter para lanzar (1) dado");
+
+                            
+                            int dado1 = 1 + aleatorio.nextInt(6);
+                            System.out.println("-DADO 1:  "+dado1);
+                            
+                            vectores[i]=dado1+vectores[i];
+                            
+                            if (vectores[i]>20 ){
+                            vectores[i]=vectores[i]-dado1;
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 20 ¡¡¡¡");
+                            }//cierre de pasarse 
+                            if (vectores[i]==20){
+                            ganador=20;
+                            gana=i;
+                            i=numj+1;
+                            }//NOMBRE DEL GANADOR
+                         }
+                         
+                        
+                         
+                         
+                         
+                  
+                        
+            }//cierre de while 
+            if (ganador==20){
+                System.out.println("\n\n\n");
+                System.out.println("¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡");
+                System.out.println("¡¡¡   FIN DEL JUEGO  ¡¡¡¡");
+                System.out.println("GANADOR JUGADOR => "+gana);
+                nganador.setText(String.valueOf(gana));
+            }//ciiere de GANADOR     
+            i++;
+            bplay.setText("PLAY-PLAYER: "+i);
+            if (i>numj){
+                i=1;
+            }
+            bplay.setText("PLAY-PLAYER: "+i);
+        break; //cierre case 1
+    }//cierre del opcp
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_bplayActionPerformed
 
-    private void nconfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nconfiguracionActionPerformed
+    private void bconfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bconfiguracionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nconfiguracionActionPerformed
+    }//GEN-LAST:event_bconfiguracionActionPerformed
 
-    private void ninformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ninformacionActionPerformed
+    private void binformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binformacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ninformacionActionPerformed
+    }//GEN-LAST:event_binformacionActionPerformed
 
-    private void nreiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nreiniciarActionPerformed
+    private void breiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breiniciarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nreiniciarActionPerformed
+    }//GEN-LAST:event_breiniciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,11 +633,15 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                 new NUMBER_RACE().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bconfiguracion;
+    private javax.swing.JButton binformacion;
     private javax.swing.JButton bjugar;
     private javax.swing.JButton bplay;
+    private javax.swing.JButton breiniciar;
     private javax.swing.JComboBox<String> cjugadores;
     private javax.swing.JComboBox<String> cnivel;
     private javax.swing.JLabel jLabel1;
@@ -477,12 +659,9 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel natras;
     private javax.swing.JLabel navanzar;
-    private javax.swing.JButton nconfiguracion;
     private javax.swing.JLabel nganador;
-    private javax.swing.JButton ninformacion;
     private javax.swing.JLabel npares;
     private javax.swing.JLabel nperdida;
-    private javax.swing.JButton nreiniciar;
     private javax.swing.JLabel nturno;
     // End of variables declaration//GEN-END:variables
 }
