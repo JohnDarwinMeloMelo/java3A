@@ -480,7 +480,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                 System.out.println("------------------------------");
                 System.out.println("\n\n\n\n\n");
                 System.out.println("LA META ES => 20");
-  
+                System.out.println("pocicion de jugador ("+i+")= "+vectores[i]);
                     
                     
                      
@@ -500,7 +500,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             int dado2 = 1 + aleatorio.nextInt(6);
                             System.out.println("-DADO 1:  "+dado1);
                             System.out.println("-DADO 2:  "+dado2);
-
+                            
 
 
 
@@ -509,7 +509,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                                 npares.setText(String.valueOf(contPar[i]));
                             }else{
                                 contPar[i]=0;
-                                
+                                npares.setText(String.valueOf(contPar[i]));
                             } //cieree de if dado igual
                             if (contPar[i]==3){
                                 System.out.println("¡¡¡RACHA 3 PARES SEGUIDOS GANAS EN JUEGO");
@@ -532,7 +532,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             if (vectores[i]==20){
                             ganador=20;
                             gana=i;
-                            i=numj+1;
+                            
                             }//NOMBRE DEL GANADOR 
                         }else{
                             System.out.println("------------------------------");    
@@ -553,8 +553,9 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             if (vectores[i]==20){
                             ganador=20;
                             gana=i;
-                            i=numj+1;
+                            
                             }//NOMBRE DEL GANADOR
+                         
                          }
                          
                         
@@ -562,21 +563,27 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                          
                          
                   
-                        
-            }//cierre de while 
+            navanzar.setText(String.valueOf(vectores[i]));
+            nperdida.setText(String.valueOf(20-(vectores[i])));
+            }//cierre de while
+            i++;
+           
+            if (i>numj){
+                i=1;
+            }
+            bplay.setText("PLAY-PLAYER: "+i);
+            
             if (ganador==20){
                 System.out.println("\n\n\n");
                 System.out.println("¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡");
                 System.out.println("¡¡¡   FIN DEL JUEGO  ¡¡¡¡");
                 System.out.println("GANADOR JUGADOR => "+gana);
+                nturno.setText(String.valueOf(gana));
                 nganador.setText(String.valueOf(gana));
+                navanzar.setText(String.valueOf(vectores[gana]));
+                bplay.setEnabled(false);
             }//ciiere de GANADOR     
-            i++;
-            bplay.setText("PLAY-PLAYER: "+i);
-            if (i>numj){
-                i=1;
-            }
-            bplay.setText("PLAY-PLAYER: "+i);
+
         break; //cierre case 1
     }//cierre del opcp
         
