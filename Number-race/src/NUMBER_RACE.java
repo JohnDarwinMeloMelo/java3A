@@ -23,8 +23,9 @@ public class NUMBER_RACE extends javax.swing.JFrame {
      Scanner Datos;
      
      int vector=0;
-     int vectores[]= new int[10];
-     int contPar[]= new int[10]; 
+     int vectores[]= new int[1000];
+     int contPar[]= new int[1000];
+     int mato[]= new int[1000];
      int b=0,a=1,numj=0,opc=1,ganador=0,i=1,res1,gana=0;
      String opc1="";
      
@@ -483,8 +484,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                 System.out.println("pocicion de jugador ("+i+")= "+vectores[i]);
                     
                     
-                     
-                    
+                                              
                    
                    
                         
@@ -557,7 +557,16 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             }//NOMBRE DEL GANADOR
                          
                          }
-                         
+            int blo=0;
+            for (blo=1;blo<=numj;blo++){
+            if ((blo != i)&&(vectores[i]==vectores[blo]) ){
+                vectores[blo]=0;
+                mato[blo]=1+mato[blo];
+                System.out.println("MATOOOOOOOOOOOO  "+blo);
+                
+            }
+            
+            }
                         
                          
                          
@@ -565,6 +574,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                   
             navanzar.setText(String.valueOf(vectores[i]));
             nperdida.setText(String.valueOf(20-(vectores[i])));
+            natras.setText(String.valueOf(mato[i]));
             }//cierre de while
             i++;
            
@@ -597,14 +607,30 @@ public class NUMBER_RACE extends javax.swing.JFrame {
 
     private void bconfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bconfiguracionActionPerformed
         // TODO add your handling code here:
+        Ventana2 v2=new Ventana2();
+        v2.setVisible(true);
+        dispose ();
+        
+        System.out.println("entro");
+        
+        
+        
     }//GEN-LAST:event_bconfiguracionActionPerformed
 
     private void binformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binformacionActionPerformed
         // TODO add your handling code here:
+        Ventana3 v3=new Ventana3();
+        v3.setVisible(true);
+        
     }//GEN-LAST:event_binformacionActionPerformed
 
     private void breiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breiniciarActionPerformed
         // TODO add your handling code here:
+        
+        dispose();
+        NUMBER_RACE v1=new NUMBER_RACE();
+        v1.setVisible(true);
+        
     }//GEN-LAST:event_breiniciarActionPerformed
 
     /**
@@ -649,7 +675,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     private javax.swing.JButton bjugar;
     private javax.swing.JButton bplay;
     private javax.swing.JButton breiniciar;
-    private javax.swing.JComboBox<String> cjugadores;
+    public static javax.swing.JComboBox<String> cjugadores;
     private javax.swing.JComboBox<String> cnivel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
