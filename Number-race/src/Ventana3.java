@@ -1,3 +1,6 @@
+
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +18,7 @@ public class Ventana3 extends javax.swing.JFrame {
      */
     public Ventana3() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("icons/informacion.png")).getImage());
     }
 
     /**
@@ -45,7 +49,7 @@ public class Ventana3 extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("°-° INGENIERIA EN SITEMAS °-° ");
+        jLabel2.setText("°-° INGENIERIA EN SISTEMAS °-° ");
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));

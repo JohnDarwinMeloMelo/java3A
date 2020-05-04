@@ -1,6 +1,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -36,6 +37,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
      
     public NUMBER_RACE() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("icons/carro.png")).getImage());
         Datos = new Scanner(System.in);
         
         
@@ -58,6 +60,8 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         bplay = new javax.swing.JButton();
+        id2 = new javax.swing.JLabel();
+        id1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,19 +107,35 @@ public class NUMBER_RACE extends javax.swing.JFrame {
             }
         });
 
+        id2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/DD.png"))); // NOI18N
+        id2.setText("jLabel2");
+
+        id1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/DD.png"))); // NOI18N
+        id1.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(bplay, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(id1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bplay, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(150, 150, 150)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(id1)
+                    .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addComponent(bplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -323,7 +343,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(npares, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         bconfiguracion.setBackground(new java.awt.Color(255, 102, 0));
@@ -365,7 +385,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,9 +393,9 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             .addComponent(binformacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(breiniciar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(36, 36, 36)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(52, 52, 52))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -408,7 +428,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(86, 86, 86)
@@ -439,16 +459,12 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         numj = Integer.parseInt(cjugadores.getSelectedItem().toString()) ;
-        opc1 =  cnivel.getSelectedItem().toString() ;
-        if(opc1 == "BASIC") {opc=1; }
-        if(opc1 == "INTERMEDIATE") {opc=2; }
-        if(opc1 == "ADVANCED") {opc=3; }
+        
         bjugar.setEnabled(false);
         bplay.setEnabled(true);
         bconfiguracion.setEnabled(true);
         breiniciar.setEnabled(true);
         binformacion.setEnabled(true);
-        System.out.println(numj+"-----"+opc );
         bplay.setText("PLAY-PLAYER: 1");
         
         
@@ -459,12 +475,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     }//GEN-LAST:event_bjugarActionPerformed
 
     
-    public void listo(){
-    
-    
-    
-    
-    }
+  
     
     
     
@@ -474,13 +485,13 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         
     switch (opc){
         case 1:
-            if (ganador<20){
+            if (ganador<50){
                 b=0;
                 a=1;
                 System.out.println("------------------------------");    
                 System.out.println("------------------------------");
                 System.out.println("\n\n\n\n\n");
-                System.out.println("LA META ES => 20");
+                System.out.println("LA META ES => 50");
                 System.out.println("pocicion de jugador ("+i+")= "+vectores[i]);
                     
                     
@@ -488,7 +499,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                    
                    
                         
-                         if (vectores[i]+6<20){
+                         if (vectores[i]+6<50){
                             System.out.println("------------------------------");    
                             System.out.println("------------------------------");
                             System.out.println("----JUGADOR NUMERO "+i);
@@ -500,6 +511,57 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             int dado2 = 1 + aleatorio.nextInt(6);
                             System.out.println("-DADO 1:  "+dado1);
                             System.out.println("-DADO 2:  "+dado2);
+                            
+                            
+                            
+                            switch(dado1){
+                                case 1:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }//dado 1 imagenes
+                            switch(dado2){
+                                case 1:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }//dado2 imagenes
+                            
+                            
                             
 
 
@@ -513,24 +575,27 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             } //cieree de if dado igual
                             if (contPar[i]==3){
                                 System.out.println("¡¡¡RACHA 3 PARES SEGUIDOS GANAS EN JUEGO");
-                                vectores[i]=20;
-                                ganador=20;
+                                vectores[i]=50;
+                                ganador=50;
                             }//cierre de contador ganador 
                             
                             
                             if (contPar[i]<3){
                             vector=dado1+dado2;
+                            if((dado1==1) && (dado2==1)){
+                                vector=21;
+                            }
                             vectores[i]=vector+vectores[i];
                             }//cierre de conador pasa
                               
 
 
-                            if (vectores[i]>20 ){
+                            if (vectores[i]>50 ){
                             vectores[i]=vectores[i]-vector;
-                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 20 ¡¡¡¡");
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 50 ¡¡¡¡");
                             }//cierre de pasarse 
-                            if (vectores[i]==20){
-                            ganador=20;
+                            if (vectores[i]==50){
+                            ganador=50;
                             gana=i;
                             
                             }//NOMBRE DEL GANADOR 
@@ -543,15 +608,38 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                             
                             int dado1 = 1 + aleatorio.nextInt(6);
                             System.out.println("-DADO 1:  "+dado1);
+                            switch(dado1){
+                                case 1:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
                             
+                            }
+                            id2.setIcon(new ImageIcon(getClass().getResource("icons/DD.png")));
                             vectores[i]=dado1+vectores[i];
                             
-                            if (vectores[i]>20 ){
+                            if (vectores[i]>50 ){
                             vectores[i]=vectores[i]-dado1;
-                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 20 ¡¡¡¡");
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 50 ¡¡¡¡");
                             }//cierre de pasarse 
-                            if (vectores[i]==20){
-                            ganador=20;
+                            if (vectores[i]==50){
+                            ganador=50;
                             gana=i;
                             
                             }//NOMBRE DEL GANADOR
@@ -573,7 +661,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
                          
                   
             navanzar.setText(String.valueOf(vectores[i]));
-            nperdida.setText(String.valueOf(20-(vectores[i])));
+            nperdida.setText(String.valueOf(50-(vectores[i])));
             natras.setText(String.valueOf(mato[i]));
             }//cierre de while
             i++;
@@ -583,7 +671,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
             }
             bplay.setText("PLAY-PLAYER: "+i);
             
-            if (ganador==20){
+            if (ganador==50){
                 System.out.println("\n\n\n");
                 System.out.println("¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡");
                 System.out.println("¡¡¡   FIN DEL JUEGO  ¡¡¡¡");
@@ -677,6 +765,8 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     private javax.swing.JButton breiniciar;
     public static javax.swing.JComboBox<String> cjugadores;
     private javax.swing.JComboBox<String> cnivel;
+    private javax.swing.JLabel id1;
+    private javax.swing.JLabel id2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
