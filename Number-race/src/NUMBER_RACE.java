@@ -27,7 +27,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
      int vectores[]= new int[1000];
      int contPar[]= new int[1000];
      int mato[]= new int[1000];
-     int b=0,a=1,numj=0,opc=1,ganador=0,i=1,res1,gana=0;
+     int numj=0,opc=1,ganador=0,i=1,gana=0;
      String opc1="";
      
      
@@ -164,6 +164,11 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         jLabel5.setText("--LEVEL:");
 
         cnivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BASIC", "INTERMEDIATE", "ADVANCED" }));
+        cnivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cnivelActionPerformed(evt);
+            }
+        });
 
         bjugar.setBackground(new java.awt.Color(255, 102, 0));
         bjugar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -459,7 +464,16 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         numj = Integer.parseInt(cjugadores.getSelectedItem().toString()) ;
-        
+        String    dificultad = cnivel.getSelectedItem().toString();
+        if ( "BASIC".equals(dificultad) ){
+        opc=1;
+        }
+        if ( "INTERMEDIATE".equals(dificultad) ){
+        opc=2;
+        }
+        if ( "ADVANCED".equals(dificultad) ){
+        opc=3;
+        }
         bjugar.setEnabled(false);
         bplay.setEnabled(true);
         bconfiguracion.setEnabled(true);
@@ -486,11 +500,10 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     switch (opc){
         case 1:
             if (ganador<50){
-                b=0;
-                a=1;
+                
+                
                 System.out.println("------------------------------");    
                 System.out.println("------------------------------");
-                System.out.println("\n\n\n\n\n");
                 System.out.println("LA META ES => 50");
                 System.out.println("pocicion de jugador ("+i+")= "+vectores[i]);
                     
@@ -650,7 +663,7 @@ public class NUMBER_RACE extends javax.swing.JFrame {
             if ((blo != i)&&(vectores[i]==vectores[blo]) ){
                 vectores[blo]=0;
                 mato[blo]=1+mato[blo];
-                System.out.println("MATOOOOOOOOOOOO  "+blo);
+                System.out.println("MATO AL JUGADOR:  "+blo);
                 
             }
             
@@ -683,6 +696,415 @@ public class NUMBER_RACE extends javax.swing.JFrame {
             }//ciiere de GANADOR     
 
         break; //cierre case 1
+        
+        case 2:
+            if (ganador<100){
+                
+                
+                System.out.println("------------------------------");    
+                System.out.println("------------------------------");
+                System.out.println("LA META ES => 100");
+                System.out.println("pocicion de jugador ("+i+")= "+vectores[i]);
+                    
+                    
+                                              
+                   
+                   
+                        
+                         if (vectores[i]+6<100){
+                            System.out.println("------------------------------");    
+                            System.out.println("------------------------------");
+                            System.out.println("----JUGADOR NUMERO "+i);
+                            nturno.setText(String.valueOf(i));
+                            System.out.println("presione enter para lanzar (2) los dados");
+ 
+                            
+                            int dado1 = 1 + aleatorio.nextInt(6);
+                            int dado2 = 1 + aleatorio.nextInt(6);
+                            System.out.println("-DADO 1:  "+dado1);
+                            System.out.println("-DADO 2:  "+dado2);
+                            
+                            
+                            
+                            switch(dado1){
+                                case 1:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }//dado 1 imagenes
+                            switch(dado2){
+                                case 1:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }//dado2 imagenes
+                            
+                            
+                            
+
+
+
+                            if (dado1==dado2){
+                                contPar[i]++;
+                                npares.setText(String.valueOf(contPar[i]));
+                            }else{
+                                contPar[i]=0;
+                                npares.setText(String.valueOf(contPar[i]));
+                            } //cieree de if dado igual
+                            if (contPar[i]==3){
+                                System.out.println("¡¡¡RACHA 3 PARES SEGUIDOS GANAS EN JUEGO");
+                                vectores[i]=100;
+                                ganador=100;
+                            }//cierre de contador ganador 
+                            
+                            
+                            if (contPar[i]<3){
+                            vector=dado1+dado2;
+                            if((dado1==1) && (dado2==1)){
+                                vector=21;
+                            }
+                            vectores[i]=vector+vectores[i];
+                            }//cierre de conador pasa
+                              
+
+
+                            if (vectores[i]>100 ){
+                            vectores[i]=vectores[i]-vector;
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 100 ¡¡¡¡");
+                            }//cierre de pasarse 
+                            if (vectores[i]==100){
+                            ganador=100;
+                            gana=i;
+                            
+                            }//NOMBRE DEL GANADOR 
+                        }else{
+                            System.out.println("------------------------------");    
+                            System.out.println("------------------------------");
+                            System.out.println("----JUGADOR NUMERO "+i);
+                            System.out.println("presione enter para lanzar (1) dado");
+
+                            
+                            int dado1 = 1 + aleatorio.nextInt(6);
+                            System.out.println("-DADO 1:  "+dado1);
+                            switch(dado1){
+                                case 1:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }
+                            id2.setIcon(new ImageIcon(getClass().getResource("icons/DD.png")));
+                            vectores[i]=dado1+vectores[i];
+                            
+                            if (vectores[i]>100 ){
+                            vectores[i]=vectores[i]-dado1;
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 100 ¡¡¡¡");
+                            }//cierre de pasarse 
+                            if (vectores[i]==100){
+                            ganador=100;
+                            gana=i;
+                            
+                            }//NOMBRE DEL GANADOR
+                         
+                         }
+            int blo=0;
+            for (blo=1;blo<=numj;blo++){
+            if ((blo != i)&&(vectores[i]==vectores[blo]) ){
+                vectores[blo]=0;
+                mato[blo]=1+mato[blo];
+                System.out.println("MATO AL JUGADOR:  "+blo);
+                
+            }
+            
+            }
+                        
+                         
+                         
+                         
+                  
+            navanzar.setText(String.valueOf(vectores[i]));
+            nperdida.setText(String.valueOf(100-(vectores[i])));
+            natras.setText(String.valueOf(mato[i]));
+            }//cierre de while
+            i++;
+           
+            if (i>numj){
+                i=1;
+            }
+            bplay.setText("PLAY-PLAYER: "+i);
+            
+            if (ganador==100){
+                System.out.println("\n\n\n");
+                System.out.println("¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡");
+                System.out.println("¡¡¡   FIN DEL JUEGO  ¡¡¡¡");
+                System.out.println("GANADOR JUGADOR => "+gana);
+                nturno.setText(String.valueOf(gana));
+                nganador.setText(String.valueOf(gana));
+                navanzar.setText(String.valueOf(vectores[gana]));
+                bplay.setEnabled(false);
+            }//ciiere de GANADOR     
+
+        break; //cierre case 2
+        
+        
+        
+        case 3:
+            if (ganador<200){
+                
+                
+                System.out.println("------------------------------");    
+                System.out.println("------------------------------");
+                System.out.println("LA META ES => 200");
+                System.out.println("pocicion de jugador ("+i+")= "+vectores[i]);
+                    
+                    
+                                              
+                   
+                   
+                        
+                         if (vectores[i]+6<200){
+                            System.out.println("------------------------------");    
+                            System.out.println("------------------------------");
+                            System.out.println("----JUGADOR NUMERO "+i);
+                            nturno.setText(String.valueOf(i));
+                            System.out.println("presione enter para lanzar (2) los dados");
+ 
+                            
+                            int dado1 = 1 + aleatorio.nextInt(6);
+                            int dado2 = 1 + aleatorio.nextInt(6);
+                            System.out.println("-DADO 1:  "+dado1);
+                            System.out.println("-DADO 2:  "+dado2);
+                            
+                            
+                            
+                            switch(dado1){
+                                case 1:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }//dado 1 imagenes
+                            switch(dado2){
+                                case 1:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id2.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }//dado2 imagenes
+                            
+                            
+                            
+
+
+
+                            if (dado1==dado2){
+                                contPar[i]++;
+                                npares.setText(String.valueOf(contPar[i]));
+                            }else{
+                                contPar[i]=0;
+                                npares.setText(String.valueOf(contPar[i]));
+                            } //cieree de if dado igual
+                            if (contPar[i]==3){
+                                System.out.println("¡¡¡RACHA 3 PARES SEGUIDOS GANAS EN JUEGO");
+                                vectores[i]=200;
+                                ganador=200;
+                            }//cierre de contador ganador 
+                            
+                            
+                            if (contPar[i]<3){
+                            vector=dado1+dado2;
+                            if((dado1==1) && (dado2==1)){
+                                vector=21;
+                            }
+                            vectores[i]=vector+vectores[i];
+                            }//cierre de conador pasa
+                              
+
+
+                            if (vectores[i]>200 ){
+                            vectores[i]=vectores[i]-vector;
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 200 ¡¡¡¡");
+                            }//cierre de pasarse 
+                            if (vectores[i]==200){
+                            ganador=200;
+                            gana=i;
+                            
+                            }//NOMBRE DEL GANADOR 
+                        }else{
+                            System.out.println("------------------------------");    
+                            System.out.println("------------------------------");
+                            System.out.println("----JUGADOR NUMERO "+i);
+                            System.out.println("presione enter para lanzar (1) dado");
+
+                            
+                            int dado1 = 1 + aleatorio.nextInt(6);
+                            System.out.println("-DADO 1:  "+dado1);
+                            switch(dado1){
+                                case 1:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d1.png")));
+                                    break;
+                                case 2:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
+                                    break;
+                                case 3:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
+                                    break;    
+                                case 4:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
+                                    break;
+                                case 5:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
+                                    break;    
+                                case 6:
+                                    id1.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
+                                    break;
+                                default:
+                                    break;
+                            
+                            }
+                            id2.setIcon(new ImageIcon(getClass().getResource("icons/DD.png")));
+                            vectores[i]=dado1+vectores[i];
+                            
+                            if (vectores[i]>200 ){
+                            vectores[i]=vectores[i]-dado1;
+                            System.out.println("¡¡¡ EL NUMERO OBTENIDO NO VALE, LA META ES 200 ¡¡¡¡");
+                            }//cierre de pasarse 
+                            if (vectores[i]==200){
+                            ganador=200;
+                            gana=i;
+                            
+                            }//NOMBRE DEL GANADOR
+                         
+                         }
+            int blo=0;
+            for (blo=1;blo<=numj;blo++){
+            if ((blo != i)&&(vectores[i]==vectores[blo]) ){
+                vectores[blo]=0;
+                mato[blo]=1+mato[blo];
+                System.out.println("MATO AL JUGADOR:  "+blo);
+                
+            }
+            
+            }
+                        
+                         
+                         
+                         
+                  
+            navanzar.setText(String.valueOf(vectores[i]));
+            nperdida.setText(String.valueOf(200-(vectores[i])));
+            natras.setText(String.valueOf(mato[i]));
+            }//cierre de while
+            i++;
+           
+            if (i>numj){
+                i=1;
+            }
+            bplay.setText("PLAY-PLAYER: "+i);
+            
+            if (ganador==200){
+                System.out.println("\n\n\n");
+                System.out.println("¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡");
+                System.out.println("¡¡¡   FIN DEL JUEGO  ¡¡¡¡");
+                System.out.println("GANADOR JUGADOR => "+gana);
+                nturno.setText(String.valueOf(gana));
+                nganador.setText(String.valueOf(gana));
+                navanzar.setText(String.valueOf(vectores[gana]));
+                bplay.setEnabled(false);
+            }//ciiere de GANADOR     
+
+        break; //cierre case 3
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//cierre del opcp
         
         
@@ -720,6 +1142,10 @@ public class NUMBER_RACE extends javax.swing.JFrame {
         v1.setVisible(true);
         
     }//GEN-LAST:event_breiniciarActionPerformed
+
+    private void cnivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cnivelActionPerformed
 
     /**
      * @param args the command line arguments
