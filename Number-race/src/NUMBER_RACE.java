@@ -496,6 +496,12 @@ public class NUMBER_RACE extends javax.swing.JFrame {
     
     private void bplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bplayActionPerformed
         // TODO add your handling code here:
+     
+        
+        
+        
+        
+        
         
     switch (opc){
         case 1:
