@@ -36,6 +36,7 @@ public class Spinning_top extends javax.swing.JFrame {
     
     public Spinning_top() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("icons/perinola.jpg")).getImage());
     }
 
     /**
@@ -325,7 +326,6 @@ public class Spinning_top extends javax.swing.JFrame {
 
         txticon.setFont(new java.awt.Font("Tahoma", 0, 90)); // NOI18N
         txticon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txticon.setText("0000");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -555,11 +555,12 @@ public class Spinning_top extends javax.swing.JFrame {
                             
                             int dado1 = 1 + aleatorio.nextInt(6);
                             
-                           
+                            System.out.println("dado: "+dado1);
                             
                             switch(dado1){
                                 case 1:
-                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p1.jpeg")));
+                                    System.out.println("ENTRE A 1");
+                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p1.png")));
                                     
                                     if(jugadores[i]>=1){ 
                                     jugadores[i]= jugadores[i]-1;
@@ -583,8 +584,9 @@ public class Spinning_top extends javax.swing.JFrame {
                                     }
                                     break;
                                 case 2:
-                                    //txticon.setIcon(new ImageIcon(getClass().getResource("icons/d2.png")));
-                                    txticon.setText(String.valueOf(dado1));
+                                    System.out.println("ENTRE A 2");
+                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p2.png")));
+                                    
                                     if(jugadores[i]>=2){ 
                                     jugadores[i]= jugadores[i]-2;
                                     
@@ -626,8 +628,9 @@ public class Spinning_top extends javax.swing.JFrame {
                                     }//else
                                     break;
                                 case 3:
-                                    //txticon.setIcon(new ImageIcon(getClass().getResource("icons/d3.png")));
-                                    txticon.setText(String.valueOf(dado1));
+                                    System.out.println("ENTRE A 3");
+                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p3.png")));
+                                    
                                     if(acumulado>=1){ 
                                     jugadores[i]= jugadores[i]+1;
                                     
@@ -648,13 +651,14 @@ public class Spinning_top extends javax.swing.JFrame {
                                     acumulado=acumulado-1;
                                     txtacumulado.setText(String.valueOf(acumulado));
                                     }
-                                    
+                            
                                     
                                     
                                     break;    
                                 case 4:
-                                    //txticon.setIcon(new ImageIcon(getClass().getResource("icons/d4.png")));
-                                    txticon.setText(String.valueOf(dado1));
+                                    System.out.println("ENTRE A 4");
+                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p4.png")));
+                                    
                                     if(acumulado==1){ 
                                     jugadores[i]= jugadores[i]+1;
                                     
@@ -698,8 +702,9 @@ public class Spinning_top extends javax.swing.JFrame {
                                     
                                     break;
                                 case 5:
-                                    //txticon.setIcon(new ImageIcon(getClass().getResource("icons/d5.png")));
-                                    txticon.setText(String.valueOf(dado1));
+                                    System.out.println("ENTRE A 5");
+                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p5.png")));
+                                    
                                     
                                     if(acumulado>=1){ 
                                     jugadores[i]= jugadores[i]+acumulado;
@@ -723,8 +728,9 @@ public class Spinning_top extends javax.swing.JFrame {
                                     }
                                     break;    
                                 case 6:
-                                    //txticon.setIcon(new ImageIcon(getClass().getResource("icons/d6.png")));
-                                    txticon.setText(String.valueOf(dado1));
+                                    System.out.println("ENTRE A 6");
+                                    txticon.setIcon(new ImageIcon(getClass().getResource("icons/p6.png")));
+                                    
                                     int fatal=0;
                                     o=0;
                                     if(jugadores[i]>=1){ 
