@@ -797,6 +797,7 @@ public class Spinning_top extends javax.swing.JFrame {
             if (jugadores[i]<1){
             muerto[i]=10;
             ganador=1+ganador;
+            
             }
             
             
@@ -821,7 +822,23 @@ public class Spinning_top extends javax.swing.JFrame {
             int vidas=0;
             for (a=1;a<=4;a++){
             if (muerto[a]==10){
-            vidas=vidas+1; 
+            vidas=vidas+1;
+            if ( a == 1){
+               txt1.setText("");
+               txt1.setIcon(new ImageIcon(getClass().getResource("icons/muerto.png")));
+               }
+            if ( a == 2){
+               txt2.setText("");
+               txt2.setIcon(new ImageIcon(getClass().getResource("icons/muerto.png")));
+               }
+            if ( a == 3){
+               txt3.setText("");
+               txt3.setIcon(new ImageIcon(getClass().getResource("icons/muerto.png")));
+               }
+            if ( a == 4){
+               txt4.setText("");
+               txt4.setIcon(new ImageIcon(getClass().getResource("icons/muerto.png")));
+               }
             }//if
             }//for
             
@@ -829,7 +846,7 @@ public class Spinning_top extends javax.swing.JFrame {
             
             
             
-            if (ganador==3){
+            if (ganador==3  || vidas ==3){
             
             txtganador.setText(String.valueOf(i));
              bjugar.setEnabled(false);
